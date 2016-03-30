@@ -67,4 +67,21 @@ describe('Point', function(){
     });
   });
 
+  context('returns coords on screen vis plane projected to custom shadow', function() {
+    it('should return coords on xyz vis plane of point with perp shadow head colinear', function(){
+      var player = new Player(new Vector(0,0,0), new Vector(1,0,0), 5, 45, 45);
+      var point1 = new Point(new Vector(5,10,0));
+      var point2 = new Point(new Vector(-5,10,0));
+      assert(point1.xyzOnVisPlane(player,point2.loc).equals(new Vector(0,10,0)))
+    });
+
+    it('should return coords on xyz vis plane of point with nonperp shadow head', function() {
+      var player = new Player(new Vector(0,0,0), new Vector(1,0,0), 5, 45 , 45 );
+      var point1 = new Point(new Vector(5,10,0));
+      var point2 = new Point(new Vector(-5,-10,0));
+      assert(point1.xyzOnVisPlane(player,point2.loc).equals(new Vector(0,0,0)))
+    });
+  });
+
+
 });
