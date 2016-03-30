@@ -7,11 +7,31 @@ const Vector = require('../lib/vector');
 const Edge = require('../lib/edge');
 
 
-// describe('Point', function(){
-//   context('returns new vector', function() {
-//     var
-//     it('should return coords that lie on the visual plane', function(){
-//
-//     });
-//   });
-// });
+describe('Point', function(){
+  context('returns new vector', function() {
+    it('should return coords on vis plane of point directly ahead', function(){
+      var player = new Player(new Vector(0,0,0), new Vector(0,1,0), 5);
+      var point = new Point(new Vector(0,10,0));
+      assert(point.xyzOnVisPlane(player).equals(new Vector(0,0,0)))
+    });
+
+    it('should return coords on vis plane of point on vis plane', function() {
+      var player = new Player(new Vector(0,0,0), new Vector(0,1,0), 5);
+      var point = new Point(new Vector(2,0,3));
+      assert(point.xyzOnVisPlane(player).equals(new Vector(2,0,3)))
+    });
+
+    it('should return undefined for point on shadows plane', function() {
+      var player = new Player(new Vector(0,0,0), new Vector(0,1,0), 5);
+      var point = new Point(new Vector(0,-5,1));
+      var p = point.xyzOnVisPlane(player)
+      console.log("This is undefined output for point on shadow plane: " + p.x + p.y + p.z );
+    });
+
+    it('should return coords on vis plane for arbitrary point in front of player', function(){
+      var player = new Player(new Vector(0,0,0), new Vector(0,1,0), 5);
+      var point = new Point(new Vector(1,2,1));
+      assert(point.xyzOnVisPlane(player).equals(new Vector(5/7,0,5/7)));
+    });
+  });
+});
