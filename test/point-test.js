@@ -5,6 +5,7 @@ const Player = require('../lib/player');
 const Point = require('../lib/point');
 const Vector = require('../lib/vector');
 const Edge = require('../lib/edge');
+const Dimensions = require('../lib/screen_dimensions');
 
 
 describe('Point', function(){
@@ -36,11 +37,11 @@ describe('Point', function(){
   });
 
   context('returns coords on screen vis plane', function() {
-    // it('should return coords on screen vis plane of point directly ahead', function(){
-    //   var player = new Player(new Vector(0,0,0), new Vector(0,1,0), 5);
-    //   var point = new Point(new Vector(1,10,0));
-    //   assert(point.uvOnVisPlane(player, 50, 100).equals(new Vector(25,50)))
-    // });
+    it('should return coords on screen vis plane of point directly ahead', function(){
+      var player = new Player(new Vector(0,0,0), new Vector(0,1,0), 5, 45, 45);
+      var point = new Point(new Vector(0,10,0));
+      assert(point.uvOnVisPlane(player).equals(new Vector(Dimensions.height/2, Dimensions.width/2)))
+    });
 
     // it('should return coords on vis plane of point on vis plane', function() {
     //   var player = new Player(new Vector(0,0,0), new Vector(0,1,0), 5);
