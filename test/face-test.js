@@ -45,7 +45,6 @@ describe('face functionality', function(){
       f[3] = new Edge(g4, g1)
       var diamond = new Face(f)
       var computed = diamond.xyzEndpointsRelativeTo(player)
-      debugger
       assert(computed[0].equals(new Vector(0,0,5)))
       assert(computed[3].equals(new Vector(0,0,0)))
       assert(computed[5].equals(new Vector(0,0,-5)))
