@@ -8,6 +8,7 @@ const Edge = require('../lib/edge');
 const Face = require('../lib/face');
 const Dimensions = require('../lib/screen_dimensions');
 const Maths = require('../lib/math');
+const Obstacle = require('../lib/obstacle');
 
 
 describe('face functionality', function(){
@@ -81,8 +82,8 @@ describe('face functionality', function(){
       e[1] = new Edge(p2, p3)
       e[2] = new Edge(p3, p4)
       e[3] = new Edge(p4, p1)
-      var diamond = new Face(e)
       var origin = new Vector(0,2,0)
+      var diamond = new Face(e)
       var computed = diamond.normalVector(origin)
 
       assert(computed.equals(new Vector(0,-1,0)))
@@ -93,12 +94,13 @@ describe('face functionality', function(){
       e[1] = new Edge(p2, p3)
       e[2] = new Edge(p3, p4)
       e[3] = new Edge(p4, p1)
-      var diamond = new Face(e)
       var origin = new Vector(0,-2,0)
+      var diamond = new Face(e)
       var computed = diamond.normalVector(origin)
 
       assert(computed.equals(new Vector(0,1,0)))
     });
+
 
 
     it('computes distance of player to plane when on plane', function(){
