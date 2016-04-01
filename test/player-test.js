@@ -40,7 +40,7 @@ describe('Player', function(){
       assert(player.u.equals(new Vector(0,1,0)));
     });
 
-    it('should update the collShpere location when player location changes', function() {
+    it('should update the collSphere location when player location changes', function() {
       var player = new Player(location, heading, 5, 30, 30, 5);
       player.loc = new Vector(1,0,0);
       player.updateVecs();
