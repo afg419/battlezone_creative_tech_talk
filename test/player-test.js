@@ -30,16 +30,6 @@ describe('Player', function(){
       assert(player.u.equals(new Vector(-1,0,0)));
     });
 
-    it('should update all vectors when heading changes', function(){
-      var player = new Player(location, heading, 5, 30, 30, collSphere);
-      player.head = new Vector(1,0,0);
-      player.updateVecs();
-
-      assert(player.shadow.equals(new Vector(-5,0,0)));
-      assert(player.v.equals(new Vector(0,0,1)));
-      assert(player.u.equals(new Vector(0,1,0)));
-    });
-
     it('should update the collSphere location when player location changes', function() {
       var player = new Player(location, heading, 5, 30, 30, 5);
       player.loc = new Vector(1,0,0);
