@@ -5,16 +5,24 @@ const Player = require('../lib/player');
 const Point = require('../lib/point');
 const Vector = require('../lib/vector');
 const Edge = require('../lib/edge');
+const CollisionSphere = require('../lib/collision_sphere')
 
 describe('Player', function(){
   context('Player functionality', function() {
     var location = new Vector(0,0,0);
     var heading = new Vector(0,1,0);
+    var collSphere = new CollisionSphere(location, 5)
 
     it('should compute shadow location', function(){
       var player = new Player(location, heading, 5);
 
       assert(player.shadow.equals(new Vector(0,-5,0)));
+    });
+
+    it('should instantiate with a CollisionSphere', function(){
+      var player = new Player(location, heading, 5, 30, 30, 5);
+
+      assert(player.collSphere.loc.equals(new Vector(0,0,0)));
     });
 
     it('should compute u axis from heading and v', function(){
@@ -23,13 +31,21 @@ describe('Player', function(){
     });
 
     it('should update all vectors when heading changes', function(){
-      var player = new Player(location, heading, 5);
+      var player = new Player(location, heading, 5, 30, 30, collSphere);
       player.head = new Vector(1,0,0);
       player.updateVecs();
 
       assert(player.shadow.equals(new Vector(-5,0,0)));
       assert(player.v.equals(new Vector(0,0,1)));
       assert(player.u.equals(new Vector(0,1,0)));
+    });
+
+    it('should update the collShpere location when player location changes', function() {
+      var player = new Player(location, heading, 5, 30, 30, 5);
+      player.loc = new Vector(1,0,0);
+      player.updateVecs();
+
+      assert(player.collSphere.loc.equals(new Vector(1,0,0)));
     });
 
     it('should compute in game view port size', function(){
