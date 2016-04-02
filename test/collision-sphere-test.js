@@ -19,7 +19,7 @@ describe('CollisionSphere', function() {
       var obstacle = new CollisionSphere(new Vector(25,0,0), 10);
       var player = new Player(new Vector(0,0,0), new Vector(0,1,0), 5, 45, 45, 10);
 
-      assert.isUndefined(player.collSphere.generalCollisionDetected(obstacle))
+      assert.isFalse(player.collSphere.generalCollisionDetected(obstacle))
     });
   });
 });
