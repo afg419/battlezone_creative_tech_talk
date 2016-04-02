@@ -5,3 +5,5 @@ require('./edge-test.js');
 require('./face-test.js');
 require('./obstacle-test.js');
 require('./collision-sphere-test.js');
+require('./mine-test.js');
+require('./booty-test.js');
