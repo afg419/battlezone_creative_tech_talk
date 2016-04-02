@@ -10,13 +10,13 @@ describe('Mine functionality', function(){
   it('detects player in detonation range', function(){
     var mine = new Mine(new Vector(0,0,0), 5);
     var player = new Player(new Vector(0,0,0), new Vector(0,1,0), 5, 45, 45, 5);
-    assert.isTrue(mine.playerInDetonationRange(player))
+    assert.isTrue(mine.inDetonationRange(player))
   });
 
   it('does not detect player outside detonation range', function(){
     var mine = new Mine(new Vector(0,0,0), 5);
     var player = new Player(new Vector(0,10,0), new Vector(0,1,0), 5, 45, 45, 5);
-    assert.isFalse(mine.playerInDetonationRange(player))
+    assert.isFalse(mine.inDetonationRange(player))
   });
 
   it('kills player in detonation range', function(){
