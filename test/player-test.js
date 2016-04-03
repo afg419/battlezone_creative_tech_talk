@@ -43,5 +43,6 @@ describe('Player', function(){
       assert.equal(5, Math.round(player.maxY()));
       assert.equal(5*(Math.sqrt(3))/3, player.maxZ());
     })
+
   });
 });
