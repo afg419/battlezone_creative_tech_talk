@@ -68,5 +68,6 @@ describe('Player', function(){
       assert(player.head.y < 1);
       assert(player.u.equals(new Vector(-1,0,0)))
     });
+
   });
 });
