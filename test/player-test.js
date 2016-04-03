@@ -95,7 +95,5 @@ describe('Player', function(){
       assert(player.head.y < 1);
       assert(player.head.z === 0);
     });
-
-
   });
 });
