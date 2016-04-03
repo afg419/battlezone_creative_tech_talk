@@ -43,5 +43,30 @@ describe('Player', function(){
       assert.equal(5, Math.round(player.maxY()));
       assert.equal(5*(Math.sqrt(3))/3, player.maxZ());
     })
+
+    it('can rotate on v', function(){
+      var player = new Player(location, heading, 5, 45, 30);
+      player.rotateOnV(0.2)
+      assert(player.head.y < 1);
+      assert(player.head.x < 0);
+      assert(player.head.z === 0);
+      assert(player.v.equals(new Vector(0,0,1)))
+    });
+
+    it('can rotate on head', function(){
+      var player = new Player(location, heading, 5, 45, 30);
+      player.rotateOnHead(0.2)
+      assert(player.v.z < 1);
+      assert(player.v.x > 0);
+      assert(player.head.equals(new Vector(0,1,0)))
+    });
+
+    it('can rotate on u', function(){
+      var player = new Player(location, heading, 5, 45, 30);
+      player.rotateOnU(0.2)
+      assert(player.head.z < 0);
+      assert(player.head.y < 1);
+      assert(player.u.equals(new Vector(-1,0,0)))
+    });
   });
 });
