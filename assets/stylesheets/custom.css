@@ -1,27 +1,23 @@
 #zero-button {
-  font-size: large;
-  margin-top: 270px;
-  background-color: rgb(100,100,100);
-  border-radius: 7px;
 }
 
 #first-button {
-  margin-top: 340px;
-  font-size: large;
-  background-color: rgb(100,100,100);
-  border-radius: 7px;
+  margin-top: 30px;
 }
 
 #second-button {
-  margin-top: 410px;
-  font-size: large;
-  background-color: rgb(100,100,100);
-  border-radius: 7px;
+  margin-top: 20px;
 }
 
 #help-button {
-  margin-top: 530px;
+}
+
+#new-game-button {
+  margin-top: 35px;
+}
+
+.button {
   font-size: large;
-  background-color: rgb(100,100,100);
+  background-color: rgb(153,153,153);
   border-radius: 7px;
 }
