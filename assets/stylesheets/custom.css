@@ -1,0 +1,23 @@
+#zero-button {
+}
+
+#first-button {
+  margin-top: 30px;
+}
+
+#second-button {
+  margin-top: 20px;
+}
+
+#help-button {
+}
+
+#new-game-button {
+  margin-top: 35px;
+}
+
+.button {
+  font-size: large;
+  background-color: rgb(153,153,153);
+  border-radius: 7px;
+}
