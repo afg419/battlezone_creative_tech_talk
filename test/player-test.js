@@ -3,7 +3,6 @@ const assert = chai.assert;
 const Player = require('../lib/player');
 const Vector = require('../lib/vector');
 const Booty = require('../lib/booty');
-const Obstacle = require('../lib/obstacle');
 
 describe('Player', function(){
   context('Player functionality', function() {
