@@ -4,6 +4,7 @@ require('./vector-test.js');
 require('./edge-test.js');
 require('./face-test.js');
 require('./obstacle-test.js');
-require('./collision-sphere-test.js');
+require('./collision-box-test.js');
+require('./bullet-test.js');
 require('./mine-test.js');
 require('./booty-test.js');

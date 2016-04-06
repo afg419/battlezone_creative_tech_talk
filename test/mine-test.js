@@ -25,6 +25,4 @@ describe('Mine functionality', function(){
     mine.detonate(player);
     assert(player.health === 0);
   });
-
-
 });
