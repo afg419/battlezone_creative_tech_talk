@@ -8,3 +8,4 @@ require('./collision-box-test.js');
 require('./bullet-test.js');
 require('./mine-test.js');
 require('./booty-test.js');
+require('./end_game-test.js');
