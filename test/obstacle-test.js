@@ -4,20 +4,28 @@ const assert = chai.assert;
 const Obstacle = require('../lib/obstacle');
 const Vector = require('../lib/vector');
 const Player = require('../lib/player');
+const Face = require('../lib/face');
 
-// describe('obstacle functionality', function(){
-//   context('weird bug, why?', function() {
-//     it('orders faces by distance to player', function(){
-//       var builder = new LevelBuilder()
-//       var player = new Player(new Vector(0,0,0), new Vector(1,0,0), 5);
-//       var obs = new Obstacle(builder.squareBuilding(100,100,100,100,100,true), new Vector(150,150,50));
-//       var computed = obs.orderedFacesByDistTo(player).map(face => {
-//         return face.distanceTo2(player)
-//       });
-//
-//       assert(computed[0] >= computed[1])
-//       assert(computed[1] >= computed[2])
-//       assert(computed[2] >= computed[3])
-//     });
-//   });
-// });
+describe('Obstacle', function(){
+  var loc1 = new Vector(2,0,0);
+  var loc2 = new Vector(1,0,0);
+  var f1 = new Face(0, loc1);
+  var f2 = new Face(0, loc2);
+  var faces = [f1, f2];
+  var player = new Player(new Vector(10,0,0), new Vector(0,1,0), 5, 45, 45, 10);
+  var obstacle = new Obstacle(faces, new Vector(0,0,0));
+
+  it('orders faces by distance to player', function(){
+    var unordered = obstacle.faces;
+    assert(unordered[0].loc.equals(loc1));
+    assert(unordered[1].loc.equals(loc2));
+
+    var ordered = obstacle.orderedFacesByDistTo(player);
+    assert(ordered[0].loc.equals(loc2));
+    assert(ordered[1].loc.equals(loc1));
+  });
+
+  it('computes distance to player', function(){
+    assert(obstacle.distanceTo(player) === 10);
+  });
+});

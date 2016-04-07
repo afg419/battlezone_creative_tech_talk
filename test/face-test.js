@@ -7,7 +7,7 @@ const Vector = require('../lib/vector');
 const Edge = require('../lib/edge');
 const Face = require('../lib/face');
 
-describe('face functionality', function(){
+describe('Face', function(){
   context('returns truncated xyz vertices', function() {
     var p1 = new Point(new Vector(0,0,0));
     var p2 = new Point(new Vector(10,0,10));

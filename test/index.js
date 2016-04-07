@@ -9,3 +9,7 @@ require('./bullet-test.js');
 require('./mine-test.js');
 require('./booty-test.js');
 require('./end_game-test.js');
+require('./game-test.js');
+require('./obstacle-builder-test.js');
+require('./obstacle-test.js');
+require('./turret-test.js');

@@ -4,7 +4,6 @@ const assert = chai.assert;
 const EndGame = require('../lib/end_game');
 
 describe('EndGame', function() {
-
   it('sorts scores by level', function() {
     var s1 = {level: 1, wealth: 0};
     var s2 = {level: 2, wealth: 0};

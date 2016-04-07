@@ -6,7 +6,7 @@ const Vector = require('../lib/vector');
 const Player = require('../lib/player');
 
 
-describe('Mine functionality', function(){
+describe('Mine', function(){
   it('detects player in detonation range', function(){
     var mine = new Mine(new Vector(0,0,0), 5, 5);
     var player = new Player(new Vector(0,0,0), new Vector(0,1,0), 5, 45, 45, 5);
