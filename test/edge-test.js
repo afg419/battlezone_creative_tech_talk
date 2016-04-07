@@ -6,7 +6,7 @@ const Point = require('../lib/point');
 const Vector = require('../lib/vector');
 const Edge = require('../lib/edge');
 
-describe('Edge endpoint computations', function(){
+describe('Edge', function(){
   context('truncates edge points if need be', function() {
     it('doesnt truncate when unnecessary', function(){
       var player = new Player(new Vector(0,0,0), new Vector(1,0,0), 5);
