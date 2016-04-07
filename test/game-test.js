@@ -12,27 +12,28 @@ const Bullet = require('../lib/bullet');
 
 describe('Game', function() {
   context('construction', function(){
-    var player = new Player(new Vector(10,0,0), new Vector(0,1,0), 5, 45, 45, 10);
+
     it('initializes with a given level', function() {
-      new Game(player, 1);
-      assert(player.alert === "");
+      var g = new Game(1);
+      g.level.player = new Player(new Vector(10,0,0), new Vector(0,1,0), 5, 45, 45, 10);
+      assert(g.level.player.alert === "");
     });
 
     it('changes player alert to tutorial mode', function() {
-      new Game(player, 0);
-      assert(player.alert === "Press 'w' to move forward.\nHit purple boxes for in-game hints.");
+      var g = new Game(0);
+      assert(g.level.player.alert === "Press 'w' to move forward.\nHit purple boxes for in-game hints.");
     });
   });
 
   context('organizing entities', function(){
-    var player = new Player(new Vector(10,0,0), new Vector(0,1,0), 5, 45, 45, 10);
-    var g = new Game(player, 1);
-    g.level = {};
+    var g = new Game(1);
+    g.level.player = new Player(new Vector(10,0,0), new Vector(0,1,0), 5, 45, 45, 10);
     g.level.mines = [(new Mine(new Vector(950,1200,50), 16, 30))];
     g.level.booty = [(new Booty(new Vector(150,0,0), 6, 10, 200))];
     g.level.turrets = [new Turret(new Vector(1000,3300,3800), 40, 70)];
     g.level.mothership = [];
     g.level.messages = [new Message(new Vector(1000,3300,3800), 40, 70)];
+    g.level.fighters = [];
     g.bullets = [new Bullet(new Vector(0,0,0), new Vector(1,0,0), 50, 1, new Vector(0,1,0))];
 
     it('returns shootable entitites', function() {
