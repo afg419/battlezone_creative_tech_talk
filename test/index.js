@@ -13,3 +13,4 @@ require('./game-test.js');
 require('./obstacle-builder-test.js');
 require('./obstacle-test.js');
 require('./turret-test.js');
+require('./fighter-test.js');
