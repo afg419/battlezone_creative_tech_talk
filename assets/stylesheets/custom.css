@@ -1,27 +1,19 @@
-#zero-button {
-}
 
-#first-button {
-  /*margin-top: 30px;*/
-}
-
-#second-button {
-  /*margin-top: 20px;*/
-}
-
-#help-button {
-}
-
-#new-game-button {
-  /*margin-top: 35px;*/
+#play-again-button {
+  color: rgb(237,100,100);
+  border-color: rgb(237,100,100);
 }
 
 .button {
+  color: rgb(64,163,67);
+  border-color: rgb(64,163,67);
+  font-family: 'Courier';
   font-size: large;
-  background-color: rgb(153,153,153);
+  background-color: black;
   border-radius: 7px;
 }
 
 body {
+  font-family: 'Courier';
   background-color: black;
 }
