@@ -33,6 +33,7 @@ describe('Game', function() {
     g.level.turrets = [new Turret(new Vector(1000,3300,3800), 40, 70)];
     g.level.mothership = [];
     g.level.messages = [new Message(new Vector(1000,3300,3800), 40, 70)];
+    g.level.fighters = [];
     g.bullets = [new Bullet(new Vector(0,0,0), new Vector(1,0,0), 50, 1, new Vector(0,1,0))];
 
     it('returns shootable entitites', function() {
