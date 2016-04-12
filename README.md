@@ -1,6 +1,7 @@
 # Space Pirates : Destroyer
 
 A 3D first-person shooter written in JavaScript by [Aaron Greenspan](https://github.com/afg419) and [Brant Wellman](https://github.com/brantwellman).
+- Graphics rendered with a handwritten 3D engine.  
 
 Play the game live: [Space Pirates : Destroyer](http://afg419.github.io/battlezone)
 
@@ -25,7 +26,7 @@ Play the game live: [Space Pirates : Destroyer](http://afg419.github.io/battlezo
 
 ## Tools
   * JavaScript / ES6
-  * [p5 JS library](https://p5js.org/) for rendering
+  * [p5 JS library](https://p5js.org/) - for sketching custom 3D graphics
   * Mocha / Chai for testing
 
 ## To install and setup locally
